@@ -8,8 +8,10 @@
 #'  automatically (see [Sys.info()]).
 #' @param ask A [`logical`] scalar: if OxCal is not installed, should the user
 #'  be asked to download it?
-#'  If `FALSE` and the OxCal executable cannot be found, will raise an error.
-#'  Only used if \R is being used interactively.
+#'  If `FALSE` and \R is being used interactively, will raise an error if the
+#'  OxCal executable cannot be found.
+#'  If `FALSE` and \R is not being used interactively, will try to download
+#'  OxCal.
 #' @inheritParams oxcal_install
 #' @details
 #'  Downloads the latest version of Oxcal (if needed) and sets the executable
@@ -63,6 +65,9 @@ oxcal_configure <- function(command = NULL, os = NULL, ask = TRUE,
       sep = "\n"
     )
     download <- readline("Choice: ")
+  }
+  if (!ask && !interactive()) {
+    download <- "1"
   }
   if (download == "1") {
     ## Install

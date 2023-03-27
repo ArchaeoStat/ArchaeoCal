@@ -24,8 +24,10 @@ automatically (see \code{\link[=Sys.info]{Sys.info()}}).}
 
 \item{ask}{A \code{\link{logical}} scalar: if OxCal is not installed, should the user
 be asked to download it?
-If \code{FALSE} and the OxCal executable cannot be found, will raise an error.
-Only used if \R is being used interactively.}
+If \code{FALSE} and \R is being used interactively, will raise an error if the
+OxCal executable cannot be found.
+If \code{FALSE} and \R is not being used interactively, will try to download
+OxCal.}
 
 \item{install_location}{A \code{\link{character}} string specifying the directory to
 extract OxCal files to. It will be created if necessary

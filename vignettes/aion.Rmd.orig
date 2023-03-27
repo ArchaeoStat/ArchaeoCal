@@ -1,0 +1,63 @@
+---
+title: "Manual"
+author: "N. Frerebeau"
+date: "`r Sys.Date()`"
+output:
+  rmarkdown::html_vignette:
+    fig_caption: yes
+    toc: true
+bibliography: bibliography.bib
+vignette: >
+  %\VignetteIndexEntry{Manual}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "./figures/",
+  fig.align = "center",
+  fig.width = 7,
+  out.width = NULL
+)
+```
+
+These examples use data available through the [**fasti**](https://packages.tesselle.org/fasti/) package which is available in a [separate repository](https://tesselle.r-universe.dev). **fasti** provides OxCal [@bronkramsey2009] input models.
+
+```{r fasti, eval=FALSE}
+## Install the latest version
+install.packages("fasti", repos = "https://tesselle.r-universe.dev")
+```
+
+```{r setup}
+## Load package
+library(aion)
+
+## Download OxCal
+oxcal_configure()
+```
+
+```{r excute}
+## Read OxCal script from Bosch et al. 2015
+path <- system.file("oxcal/ksarakil/ksarakil.oxcal", package = "fasti")
+scr <- readLines(path)
+
+## Print script
+# cat(scr, sep = "\n")
+
+## Execute OxCal script
+## /!\ this may take a while /!\
+out <- oxcal_execute(scr)
+
+## Parse OxCal output
+res <- oxcal_parse(out)
+```
+
+```{r plot, fig.height=9}
+par(mar = c(5, 6, 1, 1) + 0.1)
+plot(res)
+```
+
+## References

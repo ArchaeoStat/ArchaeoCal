@@ -28,3 +28,7 @@
 #' @docType package
 #' @keywords internal
 "_PACKAGE"
+
+#' @importFrom arkhe assert_length check_class validate
+#' @importFrom methods new setGeneric setMethod setValidity .valueClassTest
+NULL

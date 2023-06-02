@@ -1,6 +1,6 @@
 #' @details
 #' \tabular{ll}{
-#'  **Package:** \tab aion \cr
+#'  **Package:** \tab ArchaeoCal \cr
 #'  **Type:** \tab Package \cr
 #'  **Version:** \tab 0.0.0 \cr
 #'  **License:** \tab GPL-3 \cr
@@ -23,8 +23,8 @@
 #' Université Bordeaux Montaigne\cr
 #' 33607 Pessac cedex\cr
 #' France
-#' @name aion-package
-#' @aliases aion
+#' @name ArchaeoCal-package
+#' @aliases ArchaeoCal
 #' @docType package
 #' @keywords internal
 "_PACKAGE"

@@ -1,5 +1,5 @@
 ---
-title: "Manual"
+title: "Introduction to ArchaeoCal"
 author: "N. Frerebeau"
 date: "`r Sys.Date()`"
 output:
@@ -8,7 +8,7 @@ output:
     toc: true
 bibliography: bibliography.bib
 vignette: >
-  %\VignetteIndexEntry{Manual}
+  %\VignetteIndexEntry{Introduction to ArchaeoCal}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -24,16 +24,16 @@ knitr::opts_chunk$set(
 )
 ```
 
-These examples use data available through the [**fasti**](https://packages.tesselle.org/fasti/) package which is available in a [separate repository](https://tesselle.r-universe.dev). **fasti** provides OxCal [@bronkramsey2009] input models.
+This vignette uses data available through the [**ArchaeoData**](https://github.com/ArchaeoStat/ArchaeoData) package which is available in a [separate repository](https://archaeostat.r-universe.dev). **ArchaeoData** provides OxCal [@bronkramsey2009] input models.
 
-```{r fasti, eval=FALSE}
+```{r ArchaeoData, eval=FALSE}
 ## Install the latest version
-install.packages("fasti", repos = "https://tesselle.r-universe.dev")
+install.packages("ArchaeoData", repos = "https://archaeostat.r-universe.dev")
 ```
 
 ```{r setup}
 ## Load package
-library(aion)
+library(ArchaeoCal)
 
 ## Download OxCal
 oxcal_configure()
@@ -41,7 +41,7 @@ oxcal_configure()
 
 ```{r excute}
 ## Read OxCal script from Bosch et al. 2015
-path <- system.file("oxcal/ksarakil/ksarakil.oxcal", package = "fasti")
+path <- system.file("oxcal/ksarakil/ksarakil.oxcal", package = "ArchaeoData")
 scr <- readLines(path)
 
 ## Print script

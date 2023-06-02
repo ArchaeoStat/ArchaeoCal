@@ -1,16 +1,15 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# aion
+# ArchaeoCal
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/tesselle/aion/workflows/R-CMD-check/badge.svg)](https://github.com/tesselle/aion/actions)
-[![codecov](https://codecov.io/gh/tesselle/aion/branch/main/graph/badge.svg?token=XKxqPR2dpF)](https://codecov.io/gh/tesselle/aion)
-[![CodeFactor](https://www.codefactor.io/repository/github/tesselle/aion/badge/main)](https://www.codefactor.io/repository/github/tesselle/aion/overview/main)
+[![R-CMD-check](https://github.com/ArchaeoStat/ArchaeoCal/workflows/R-CMD-check/badge.svg)](https://github.com/ArchaeoStat/ArchaeoCal/actions)
+[![codecov](https://codecov.io/gh/ArchaeoStat/ArchaeoCal/branch/main/graph/badge.svg?token=fXOWoBzKIw)](https://codecov.io/gh/ArchaeoStat/ArchaeoCal)
 
-<a href="https://tesselle.r-universe.dev" class="pkgdown-devel"><img
-src="https://tesselle.r-universe.dev/badges/aion"
+<a href="https://archaeostat.r-universe.dev" class="pkgdown-devel"><img
+src="https://archaeostat.r-universe.dev/badges/ArchaeoCal"
 alt="r-universe" /></a>
 
 [![Project Status: WIP – Initial development is in progress, but there
@@ -22,31 +21,23 @@ public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostat
 
 ## Installation
 
-You can install the latest version of **aion** from [our
-repository](https://tesselle.r-universe.dev) with:
+You can install the latest version of **ArchaeoCal** from [our
+repository](https://ArchaeoStat.r-universe.dev) with:
 
 ``` r
-install.packages("aion", repos = "https://tesselle.r-universe.dev")
+install.packages("ArchaeoCal", repos = "https://archaeostat.r-universe.dev")
 ```
 
 And the development version from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("tesselle/aion")
+remotes::install_github("ArchaeoStat/ArchaeoCal")
 ```
 
 ## Usage
 
 ``` r
 ## Load packages
-library(aion)
+library(ArchaeoCal)
 ```
-
-## Contributing
-
-Please note that the **aion** project is released with a [Contributor
-Code of Conduct](https://www.tesselle.org/conduct.html). By contributing
-to this project, you agree to abide by its terms.
-
-## References

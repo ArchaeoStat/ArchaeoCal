@@ -10,7 +10,7 @@ oxcal_configure(
   ask = TRUE,
   install_location = NULL,
   install_url = NULL,
-  verbose = getOption("aion.verbose")
+  verbose = getOption("ArchaeoCal.verbose")
 )
 }
 \arguments{

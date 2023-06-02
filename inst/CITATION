@@ -1,0 +1,11 @@
+bibentry(
+  bibtype      = "Manual",
+  header       = "To cite ArchaeoCal in publications use:",
+  author       = "Nicolas Frerebeau",
+  title        = "{ArchaeoCal: An R Interface to 'OxCal'}",
+  year         = "2023",
+  organization = "Université Bordeaux Montaigne",
+  address      = "Pessac, France",
+  note         = "R package version 0.0.0.9000",
+  url          = "https://archaeostat.github.io/archaeocal/"
+)

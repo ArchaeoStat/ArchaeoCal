@@ -4,7 +4,12 @@
 \alias{oxcal_execute}
 \title{Execute an Oxcal Script}
 \usage{
-oxcal_execute(script, file = NULL, verbose = getOption("aion.verbose"), ...)
+oxcal_execute(
+  script,
+  file = NULL,
+  verbose = getOption("ArchaeoCal.verbose"),
+  ...
+)
 }
 \arguments{
 \item{script}{A \code{\link{character}} string of instructions for OxCal.}

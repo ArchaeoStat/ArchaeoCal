@@ -23,10 +23,10 @@
 #' @export
 oxcal_configure <- function(command = NULL, os = NULL, ask = TRUE,
                             install_location = NULL, install_url = NULL,
-                            verbose = getOption("aion.verbose")) {
+                            verbose = getOption("ArchaeoCal.verbose")) {
   if (is.null(command)) {
     ## Default list of possible locations
-    command <- c(getOption("aion.oxcal"), "OxCal")
+    command <- c(getOption("ArchaeoCal.oxcal"), "OxCal")
   }
 
   ## Try to construct the executable path
@@ -49,7 +49,7 @@ oxcal_configure <- function(command = NULL, os = NULL, ask = TRUE,
     if (file.exists(path)) {
       if (verbose) message(sprintf("OxCal binary found at %s", path))
       Sys.chmod(path, mode = "0777")
-      options(aion.oxcal = path)
+      options(ArchaeoCal.oxcal = path)
       return(invisible(path))
     }
   }

@@ -1,12 +1,12 @@
 .onLoad <- function(libname, pkgname) {
   ## Set package options
   op <- options()
-  op.aion <- list(
-    aion.verbose = TRUE,
-    aion.oxcal = ""
+  op.ArchaeoCal <- list(
+    ArchaeoCal.verbose = TRUE,
+    ArchaeoCal.oxcal = ""
   )
-  toset <- !(names(op.aion) %in% names(op))
-  if(any(toset)) options(op.aion[toset])
+  toset <- !(names(op.ArchaeoCal) %in% names(op))
+  if(any(toset)) options(op.ArchaeoCal[toset])
 
   invisible()
 }

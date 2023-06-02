@@ -14,7 +14,7 @@
 #' @family OxCal tools
 #' @export
 oxcal_execute <- function(script, file = NULL,
-                          verbose = getOption("aion.verbose"), ...) {
+                          verbose = getOption("ArchaeoCal.verbose"), ...) {
   ## Construct output path
   if (is.null(file)) {
     file <- tempfile()
@@ -82,7 +82,7 @@ oxcal_call <- function(args, ...) {
 #' @keywords internal
 #' @noRd
 oxcal_path <- function() {
-  path <- getOption("aion.oxcal")
+  path <- getOption("ArchaeoCal.oxcal")
   if (is.null(path) || !file.exists(path)) {
     msg <- "OxCal not properly configured. Run oxcal_configure() to debug."
     stop(msg, call. = FALSE)

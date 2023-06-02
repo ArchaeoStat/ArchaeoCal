@@ -1,7 +1,1 @@
-url: https://packages.tesselle.org/aion
-
-template:
-  package: tekton
-  opengraph:
-    twitter:
-      creator: "@nfrerebeau"
+url: https://archaeostat.github.io/archaeocal/

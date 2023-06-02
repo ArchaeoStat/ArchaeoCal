@@ -12,7 +12,7 @@
 #' @family OxCal tools
 #' @export
 oxcal_install <- function(install_url = NULL, install_location = NULL,
-                          verbose = getOption("aion.verbose")) {
+                          verbose = getOption("ArchaeoCal.verbose")) {
   ## Default url
   if (is.null(install_url)) {
     install_url <- "https://c14.arch.ox.ac.uk/OxCalDistribution.zip"

@@ -1,15 +1,16 @@
 ---
 title: "Introduction to ArchaeoCal"
 author: "N. Frerebeau"
-date: "2023-06-02"
+date: "2023-12-04"
 output:
-  rmarkdown::html_vignette:
-    fig_caption: yes
-    toc: true
+  markdown::html_format:
+    options:
+      toc: true
+      number_sections: true
 bibliography: bibliography.bib
 vignette: >
   %\VignetteIndexEntry{Introduction to ArchaeoCal}
-  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEngine{knitr::knitr}
   %\VignetteEncoding{UTF-8}
 ---
 
@@ -30,7 +31,7 @@ library(ArchaeoCal)
 
 ## Download OxCal
 oxcal_configure()
-#> OxCal binary found at /tmp/RtmpHKZr7R/OxCal/bin/OxCalLinux
+#> OxCal binary found at /tmp/RtmpDY8HDa/OxCal/bin/OxCalLinux
 ```
 
 
@@ -49,23 +50,23 @@ out <- oxcal_execute(scr)
 #> MCMC analysis
 #> Sort	Burn	Trial	Save	Shrink	kPasses	Done	Ok	Convergence
 #> [.]	[.]	[.]	[.]		3.0	10.0	100.0	100.0
-#> [.]	[.]	[.]	[.]		6.0	20.0	100.0	8.2
-#> [.]	[.]	[.]	[.]		12.0	22.2	100.0	4.8
-#> [.]	[.]	[.]	[.]		24.0	22.2	100.0	14.7
-#> [.]	[.]	[.]	[.]		48.0	22.2	100.0	36.3
-#> [.]	[.]	[.]	[.]		96.0	22.2	100.0	32.0
-#> [.]	[.]	[.]	[.]	[.]	192.0	22.2	100.0	56.1
-#> [.]	[.]	[.]	[.]		384.0	22.2	100.0	75.3
-#> [.]	[.]	[.]	[.]		768.0	22.2	100.0	93.5
-#> [.]	[.]	[.]	[.]		1152.0	30.0	100.0	90.8
-#> [.]	[.]	[.]	[.]		1536.0	40.0	100.0	90.8
-#> [.]	[.]	[.]	[.]		1920.0	50.0	100.0	90.8
-#> [.]	[.]	[.]	[.]		2304.0	60.0	100.0	90.8
-#> [.]	[.]	[.]	[.]		2688.0	70.0	100.0	90.8
-#> [.]	[.]	[.]	[.]		3072.0	80.0	100.0	90.8
-#> [.]	[.]	[.]	[.]		3456.0	90.0	100.0	90.8
-#> [.]	[.]	[.]	[.]		3840.0	100.0	100.0	90.8
-#> [.]	[.]	[.]	[.]		4224.0	110.0	100.0	90.8
+#> [.]	[.]	[.]	[.]		6.0	20.0	100.0	6.8
+#> [.]	[.]	[.]	[.]		12.0	22.2	100.0	14.4
+#> [.]	[.]	[.]	[.]		24.0	22.2	100.0	6.2
+#> [.]	[.]	[.]	[.]		48.0	22.2	100.0	43.2
+#> [.]	[.]	[.]	[.]	[.]	96.0	22.2	100.0	64.5
+#> [.]	[.]	[.]	[.]		192.0	22.2	100.0	80.3
+#> [.]	[.]	[.]	[.]		384.0	22.2	100.0	83.2
+#> [.]	[.]	[.]	[.]		768.0	22.2	100.0	70.5
+#> [.]	[.]	[.]	[.]		1152.0	30.0	100.0	95.8
+#> [.]	[.]	[.]	[.]		1536.0	40.0	100.0	85.1
+#> [.]	[.]	[.]	[.]		1920.0	50.0	100.0	85.1
+#> [.]	[.]	[.]	[.]		2304.0	60.0	100.0	85.1
+#> [.]	[.]	[.]	[.]		2688.0	70.0	100.0	85.1
+#> [.]	[.]	[.]	[.]		3072.0	80.0	100.0	85.1
+#> [.]	[.]	[.]	[.]		3456.0	90.0	100.0	85.1
+#> [.]	[.]	[.]	[.]		3840.0	100.0	100.0	82.4
+#> [.]	[.]	[.]	[.]		4224.0	110.0	100.0	82.4
 
 ## Parse OxCal output
 res <- oxcal_parse(out)
@@ -77,6 +78,9 @@ par(mar = c(5, 6, 1, 1) + 0.1)
 plot(res)
 ```
 
-<img src="./figures/plot-1.png" alt="plot of chunk plot" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
+<img src="./figures/plot-1.png" alt="plot of chunk plot"  />
+<p class="caption">plot of chunk plot</p>
+</div>
 
 ## References

@@ -73,7 +73,7 @@
                         <h4 data-toc-skip class="author">N.
 Frerebeau</h4>
             
-            <h4 data-toc-skip class="date">2023-06-02</h4>
+            <h4 data-toc-skip class="date">2023-12-04</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/ArchaeoStat/ArchaeoCal/blob/HEAD/vignettes/ArchaeoCal.Rmd" class="external-link"><code>vignettes/ArchaeoCal.Rmd</code></a></small>
       <div class="hidden name"><code>ArchaeoCal.Rmd</code></div>
@@ -94,7 +94,7 @@ package which is available in a <a href="https://archaeostat.r-universe.dev" cla
 <span></span>
 <span><span class="co">## Download OxCal</span></span>
 <span><span class="fu"><a href="../reference/oxcal_configure.html">oxcal_configure</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; OxCal binary found at /tmp/RtmpHKZr7R/OxCal/bin/OxCalLinux</span></span></code></pre></div>
+<span><span class="co">#&gt; OxCal binary found at /tmp/RtmpDY8HDa/OxCal/bin/OxCalLinux</span></span></code></pre></div>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## Read OxCal script from Bosch et al. 2015</span></span>
 <span><span class="va">path</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"oxcal/ksarakil/ksarakil.oxcal"</span>, package <span class="op">=</span> <span class="st">"ArchaeoData"</span><span class="op">)</span></span>
@@ -110,30 +110,34 @@ package which is available in a <a href="https://archaeostat.r-universe.dev" cla
 <span><span class="co">#&gt; MCMC analysis</span></span>
 <span><span class="co">#&gt; Sort Burn    Trial   Save    Shrink  kPasses Done    Ok  Convergence</span></span>
 <span><span class="co">#&gt; [.]  [.] [.] [.]     3.0 10.0    100.0   100.0</span></span>
-<span><span class="co">#&gt; [.]  [.] [.] [.]     6.0 20.0    100.0   8.2</span></span>
-<span><span class="co">#&gt; [.]  [.] [.] [.]     12.0    22.2    100.0   4.8</span></span>
-<span><span class="co">#&gt; [.]  [.] [.] [.]     24.0    22.2    100.0   14.7</span></span>
-<span><span class="co">#&gt; [.]  [.] [.] [.]     48.0    22.2    100.0   36.3</span></span>
-<span><span class="co">#&gt; [.]  [.] [.] [.]     96.0    22.2    100.0   32.0</span></span>
-<span><span class="co">#&gt; [.]  [.] [.] [.] [.] 192.0   22.2    100.0   56.1</span></span>
-<span><span class="co">#&gt; [.]  [.] [.] [.]     384.0   22.2    100.0   75.3</span></span>
-<span><span class="co">#&gt; [.]  [.] [.] [.]     768.0   22.2    100.0   93.5</span></span>
-<span><span class="co">#&gt; [.]  [.] [.] [.]     1152.0  30.0    100.0   90.8</span></span>
-<span><span class="co">#&gt; [.]  [.] [.] [.]     1536.0  40.0    100.0   90.8</span></span>
-<span><span class="co">#&gt; [.]  [.] [.] [.]     1920.0  50.0    100.0   90.8</span></span>
-<span><span class="co">#&gt; [.]  [.] [.] [.]     2304.0  60.0    100.0   90.8</span></span>
-<span><span class="co">#&gt; [.]  [.] [.] [.]     2688.0  70.0    100.0   90.8</span></span>
-<span><span class="co">#&gt; [.]  [.] [.] [.]     3072.0  80.0    100.0   90.8</span></span>
-<span><span class="co">#&gt; [.]  [.] [.] [.]     3456.0  90.0    100.0   90.8</span></span>
-<span><span class="co">#&gt; [.]  [.] [.] [.]     3840.0  100.0   100.0   90.8</span></span>
-<span><span class="co">#&gt; [.]  [.] [.] [.]     4224.0  110.0   100.0   90.8</span></span>
+<span><span class="co">#&gt; [.]  [.] [.] [.]     6.0 20.0    100.0   6.8</span></span>
+<span><span class="co">#&gt; [.]  [.] [.] [.]     12.0    22.2    100.0   14.4</span></span>
+<span><span class="co">#&gt; [.]  [.] [.] [.]     24.0    22.2    100.0   6.2</span></span>
+<span><span class="co">#&gt; [.]  [.] [.] [.]     48.0    22.2    100.0   43.2</span></span>
+<span><span class="co">#&gt; [.]  [.] [.] [.] [.] 96.0    22.2    100.0   64.5</span></span>
+<span><span class="co">#&gt; [.]  [.] [.] [.]     192.0   22.2    100.0   80.3</span></span>
+<span><span class="co">#&gt; [.]  [.] [.] [.]     384.0   22.2    100.0   83.2</span></span>
+<span><span class="co">#&gt; [.]  [.] [.] [.]     768.0   22.2    100.0   70.5</span></span>
+<span><span class="co">#&gt; [.]  [.] [.] [.]     1152.0  30.0    100.0   95.8</span></span>
+<span><span class="co">#&gt; [.]  [.] [.] [.]     1536.0  40.0    100.0   85.1</span></span>
+<span><span class="co">#&gt; [.]  [.] [.] [.]     1920.0  50.0    100.0   85.1</span></span>
+<span><span class="co">#&gt; [.]  [.] [.] [.]     2304.0  60.0    100.0   85.1</span></span>
+<span><span class="co">#&gt; [.]  [.] [.] [.]     2688.0  70.0    100.0   85.1</span></span>
+<span><span class="co">#&gt; [.]  [.] [.] [.]     3072.0  80.0    100.0   85.1</span></span>
+<span><span class="co">#&gt; [.]  [.] [.] [.]     3456.0  90.0    100.0   85.1</span></span>
+<span><span class="co">#&gt; [.]  [.] [.] [.]     3840.0  100.0   100.0   82.4</span></span>
+<span><span class="co">#&gt; [.]  [.] [.] [.]     4224.0  110.0   100.0   82.4</span></span>
 <span></span>
 <span><span class="co">## Parse OxCal output</span></span>
 <span><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/oxcal_parse.html">oxcal_parse</a></span><span class="op">(</span><span class="va">out</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html" class="external-link">par</a></span><span class="op">(</span>mar <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">6</span>, <span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span> <span class="op">+</span> <span class="fl">0.1</span><span class="op">)</span></span>
 <span><span class="fu"><a href="../reference/plot.html">plot</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span></span></code></pre></div>
-<p><img src="figures/plot-1.png" alt="plot of chunk plot" style="display: block; margin: auto;"></p>
+<div class="figure" style="text-align: center">
+<img src="figures/plot-1.png" alt="plot of chunk plot"><p class="caption">
+plot of chunk plot
+</p>
+</div>
 <div class="section level2 unnumbered">
 <h2 class="unnumbered" id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>
 </h2>

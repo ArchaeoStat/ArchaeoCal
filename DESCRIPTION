@@ -10,7 +10,7 @@ License: GPL (>= 3)
 URL: https://archaeostat.github.io/archaeocal/
 BugReports: https://github.com/ArchaeoStat/ArchaeoCal/issues
 Imports: 
-    arkhe (>= 1.1.0),
+    arkhe (>= 1.4.0),
     graphics,
     grDevices,
     methods,
@@ -28,7 +28,8 @@ RoxygenNote: 7.2.3
 Collate: 
     'AllClasses.R'
     'AllGenerics.R'
-    'aion-package.R'
+    'ArchaeoCal-internal.R'
+    'ArchaeoCal-package.R'
     'coerce.R'
     'mutators.R'
     'oxcal_calibrate.R'
@@ -38,6 +39,5 @@ Collate:
     'oxcal_parse.R'
     'plot.R'
     'show.R'
-    'utilities.R'
     'validate.R'
     'zzz.R'

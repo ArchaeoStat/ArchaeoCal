@@ -29,6 +29,6 @@
 #' @keywords internal
 "_PACKAGE"
 
-#' @importFrom arkhe assert_length check_class validate
+#' @import arkhe
 #' @importFrom methods new setGeneric setMethod setValidity .valueClassTest
 NULL

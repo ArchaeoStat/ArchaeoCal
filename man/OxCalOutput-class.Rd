@@ -24,10 +24,6 @@ In the code snippets below, \code{x} is an \code{OxCalOutput} object.
 }
 }
 
-\seealso{
-Other classes: 
-\code{\link{OxCalFiles-class}}
-}
 \author{
 N. Frerebeau
 }

@@ -4,12 +4,14 @@ NULL
 
 #' @export
 #' @rdname oxcal_parse
-#' @aliases oxcal_parse,OxCalFiles-method
+#' @aliases oxcal_parse,list-method
 setMethod(
   f = "oxcal_parse",
-  signature = c(object = "OxCalFiles"),
+  signature = c(object = "list"),
   definition = function(object) {
-    methods::callGeneric(object@js)
+    js <- object$js
+    if (is.null(js)) stop("Could not find the path.", call. = FALSE)
+    methods::callGeneric(js)
   }
 )
 

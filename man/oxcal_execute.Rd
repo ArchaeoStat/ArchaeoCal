@@ -23,7 +23,14 @@ the same directory.}
 \item{...}{Further parameters to be passed to \code{\link[=system2]{system2()}}.}
 }
 \value{
-An \code{\linkS4class{OxCalFiles}} object.
+A list with the following elements:
+\describe{
+\item{\code{oxcal}}{A \code{\link{character}} string giving the path to the .oxcal file.}
+\item{\code{js}}{A \code{\link{character}} string giving the path to the .js file.}
+\item{\code{log}}{A \code{\link{character}} string giving the path to the .log file.}
+\item{\code{txt}}{A \code{\link{character}} string giving the path to the .txt file.}
+\item{\code{csv}}{A \code{\link{character}} string giving the path to the .csv file.}
+}
 }
 \description{
 Execute an Oxcal Script

@@ -5,8 +5,7 @@ NULL
 #' Read and Parse OxCal Output
 #'
 #' @param object A [`character`] string naming a JavaScript file which the data
-#'  are to be read from (or an [`OxCalFiles-class`] object returned by
-#'  [oxcal_execute()]).
+#'  are to be read from (or a `list` returned by [oxcal_execute()]).
 #' @return An [`OxCalOutput-class`] object.
 #' @example inst/examples/ex-oxcal-execute.R
 #' @references

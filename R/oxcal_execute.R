@@ -6,7 +6,15 @@
 #'  the same directory.
 #' @param verbose A [`logical`] scalar: should status updates be displayed?
 #' @param ... Further parameters to be passed to [system2()].
-#' @return An [`OxCalFiles-class`] object.
+#' @return
+#'  A list with the following elements:
+#'  \describe{
+#'   \item{`oxcal`}{A [`character`] string giving the path to the .oxcal file.}
+#'   \item{`js`}{A [`character`] string giving the path to the .js file.}
+#'   \item{`log`}{A [`character`] string giving the path to the .log file.}
+#'   \item{`txt`}{A [`character`] string giving the path to the .txt file.}
+#'   \item{`csv`}{A [`character`] string giving the path to the .csv file.}
+#'  }
 #' @example inst/examples/ex-oxcal-execute.R
 #' @references
 #'  \url{https://c14.arch.ox.ac.uk/oxcalhelp/hlp_analysis_file.html}
@@ -47,7 +55,7 @@ oxcal_execute <- function(script, file = NULL,
   csv <- if (file.exists(csv)) csv else character(0)
 
   ## Output files
-  .OxCalFiles(
+  list(
     oxcal = oxcal,
     js = sprintf("%s.js", file),
     log = sprintf("%s.log", file),

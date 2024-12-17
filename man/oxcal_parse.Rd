@@ -4,20 +4,19 @@
 \name{oxcal_parse}
 \alias{oxcal_parse}
 \alias{oxcal_parse-method}
-\alias{oxcal_parse,OxCalFiles-method}
+\alias{oxcal_parse,list-method}
 \alias{oxcal_parse,character-method}
 \title{Read and Parse OxCal Output}
 \usage{
 oxcal_parse(object)
 
-\S4method{oxcal_parse}{OxCalFiles}(object)
+\S4method{oxcal_parse}{list}(object)
 
 \S4method{oxcal_parse}{character}(object)
 }
 \arguments{
 \item{object}{A \code{\link{character}} string naming a JavaScript file which the data
-are to be read from (or an \code{\linkS4class{OxCalFiles}} object returned by
-\code{\link[=oxcal_execute]{oxcal_execute()}}).}
+are to be read from (or a \code{list} returned by \code{\link[=oxcal_execute]{oxcal_execute()}}).}
 }
 \value{
 An \code{\linkS4class{OxCalOutput}} object.

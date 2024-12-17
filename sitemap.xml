@@ -1,63 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://archaeostat.github.io/archaeocal/404.html</loc>
-  </url>
-  <url>
-    <loc>https://archaeostat.github.io/archaeocal/CODE_OF_CONDUCT.html</loc>
-  </url>
-  <url>
-    <loc>https://archaeostat.github.io/archaeocal/CONTRIBUTING.html</loc>
-  </url>
-  <url>
-    <loc>https://archaeostat.github.io/archaeocal/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>https://archaeostat.github.io/archaeocal/articles/ArchaeoCal.html</loc>
-  </url>
-  <url>
-    <loc>https://archaeostat.github.io/archaeocal/articles/index.html</loc>
-  </url>
-  <url>
-    <loc>https://archaeostat.github.io/archaeocal/authors.html</loc>
-  </url>
-  <url>
-    <loc>https://archaeostat.github.io/archaeocal/index.html</loc>
-  </url>
-  <url>
-    <loc>https://archaeostat.github.io/archaeocal/news/index.html</loc>
-  </url>
-  <url>
-    <loc>https://archaeostat.github.io/archaeocal/pull_request_template.html</loc>
-  </url>
-  <url>
-    <loc>https://archaeostat.github.io/archaeocal/reference/ArchaeoCal-package.html</loc>
-  </url>
-  <url>
-    <loc>https://archaeostat.github.io/archaeocal/reference/OxCalFiles-class.html</loc>
-  </url>
-  <url>
-    <loc>https://archaeostat.github.io/archaeocal/reference/OxCalOutput-class.html</loc>
-  </url>
-  <url>
-    <loc>https://archaeostat.github.io/archaeocal/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>https://archaeostat.github.io/archaeocal/reference/oxcal_calibrate.html</loc>
-  </url>
-  <url>
-    <loc>https://archaeostat.github.io/archaeocal/reference/oxcal_configure.html</loc>
-  </url>
-  <url>
-    <loc>https://archaeostat.github.io/archaeocal/reference/oxcal_execute.html</loc>
-  </url>
-  <url>
-    <loc>https://archaeostat.github.io/archaeocal/reference/oxcal_install.html</loc>
-  </url>
-  <url>
-    <loc>https://archaeostat.github.io/archaeocal/reference/oxcal_parse.html</loc>
-  </url>
-  <url>
-    <loc>https://archaeostat.github.io/archaeocal/reference/plot.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://archaeostat.github.io/archaeocal/404.html</loc></url>
+<url><loc>https://archaeostat.github.io/archaeocal/CODE_OF_CONDUCT.html</loc></url>
+<url><loc>https://archaeostat.github.io/archaeocal/CONTRIBUTING.html</loc></url>
+<url><loc>https://archaeostat.github.io/archaeocal/LICENSE.html</loc></url>
+<url><loc>https://archaeostat.github.io/archaeocal/articles/ArchaeoCal.html</loc></url>
+<url><loc>https://archaeostat.github.io/archaeocal/articles/index.html</loc></url>
+<url><loc>https://archaeostat.github.io/archaeocal/authors.html</loc></url>
+<url><loc>https://archaeostat.github.io/archaeocal/index.html</loc></url>
+<url><loc>https://archaeostat.github.io/archaeocal/news/index.html</loc></url>
+<url><loc>https://archaeostat.github.io/archaeocal/reference/ArchaeoCal-package.html</loc></url>
+<url><loc>https://archaeostat.github.io/archaeocal/reference/OxCalOutput-class.html</loc></url>
+<url><loc>https://archaeostat.github.io/archaeocal/reference/index.html</loc></url>
+<url><loc>https://archaeostat.github.io/archaeocal/reference/oxcal_calibrate.html</loc></url>
+<url><loc>https://archaeostat.github.io/archaeocal/reference/oxcal_configure.html</loc></url>
+<url><loc>https://archaeostat.github.io/archaeocal/reference/oxcal_execute.html</loc></url>
+<url><loc>https://archaeostat.github.io/archaeocal/reference/oxcal_install.html</loc></url>
+<url><loc>https://archaeostat.github.io/archaeocal/reference/oxcal_parse.html</loc></url>
+<url><loc>https://archaeostat.github.io/archaeocal/reference/plot.html</loc></url>
 </urlset>
+

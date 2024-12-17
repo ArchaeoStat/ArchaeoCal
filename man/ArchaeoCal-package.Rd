@@ -3,7 +3,6 @@
 \docType{package}
 \name{ArchaeoCal-package}
 \alias{ArchaeoCal-package}
-\alias{_PACKAGE}
 \alias{ArchaeoCal}
 \title{ArchaeoCal: An R Interface to 'OxCal'}
 \description{

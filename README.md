@@ -5,15 +5,14 @@
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/ArchaeoStat/ArchaeoCal/workflows/R-CMD-check/badge.svg)](https://github.com/ArchaeoStat/ArchaeoCal/actions)
-[![codecov](https://codecov.io/gh/ArchaeoStat/ArchaeoCal/branch/main/graph/badge.svg?token=fXOWoBzKIw)](https://codecov.io/gh/ArchaeoStat/ArchaeoCal)
+[![R-CMD-check](https://github.com/ArchaeoStat/ArchaeoCal/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ArchaeoStat/ArchaeoCal/actions/workflows/R-CMD-check.yaml)
+[![codecov](https://codecov.io/gh/ArchaeoStat/ArchaeoCal/branch/main/graph/badge.svg?token=fXOWoBzKIw)](https://app.codecov.io/gh/ArchaeoStat/ArchaeoCal)
 
 <a href="https://archaeostat.r-universe.dev" class="pkgdown-devel"><img
 src="https://archaeostat.r-universe.dev/badges/ArchaeoCal"
-alt="r-universe" /></a>
-
-[![Project Status: WIP – Initial development is in progress, but there
-has not yet been a stable, usable release suitable for the
+alt="r-universe" /></a> [![Project Status: WIP – Initial development is
+in progress, but there has not yet been a stable, usable release
+suitable for the
 public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 <!-- badges: end -->
 
@@ -25,7 +24,10 @@ You can install the latest version of **ArchaeoCal** from [our
 repository](https://ArchaeoStat.r-universe.dev) with:
 
 ``` r
-install.packages("ArchaeoCal", repos = "https://archaeostat.r-universe.dev")
+options(repos = c(CRAN = "https://cloud.r-project.org",
+                  tesselle = "https://archaeostat.r-universe.dev"))
+
+install.packages("ArchaeoCal")
 ```
 
 And the development version from [GitHub](https://github.com/) with:

@@ -17,11 +17,10 @@ knitr::opts_chunk$set(
 # ArchaeoCal
 
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/ArchaeoStat/ArchaeoCal/workflows/R-CMD-check/badge.svg)](https://github.com/ArchaeoStat/ArchaeoCal/actions)
-[![codecov](https://codecov.io/gh/ArchaeoStat/ArchaeoCal/branch/main/graph/badge.svg?token=fXOWoBzKIw)](https://codecov.io/gh/ArchaeoStat/ArchaeoCal)
+[![R-CMD-check](https://github.com/ArchaeoStat/ArchaeoCal/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ArchaeoStat/ArchaeoCal/actions/workflows/R-CMD-check.yaml)
+[![codecov](https://codecov.io/gh/ArchaeoStat/ArchaeoCal/branch/main/graph/badge.svg?token=fXOWoBzKIw)](https://app.codecov.io/gh/ArchaeoStat/ArchaeoCal)
 
 [![r-universe](https://archaeostat.r-universe.dev/badges/ArchaeoCal)](https://archaeostat.r-universe.dev){.pkgdown-devel}
-
 [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 <!-- badges: end -->
 
@@ -32,7 +31,10 @@ knitr::opts_chunk$set(
 You can install the latest version of **ArchaeoCal** from [our repository](https://ArchaeoStat.r-universe.dev) with:
 
 ```{r universe-installation, eval=FALSE}
-install.packages("ArchaeoCal", repos = "https://archaeostat.r-universe.dev")
+options(repos = c(CRAN = "https://cloud.r-project.org",
+                  tesselle = "https://archaeostat.r-universe.dev"))
+
+install.packages("ArchaeoCal")
 ```
 
 And the development version from [GitHub](https://github.com/) with:

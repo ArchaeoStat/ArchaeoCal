@@ -6,12 +6,10 @@
 #'  workstation. It must be one of "`Linux`", "`Windows`" or "`Darwin`".
 #'  If `NULL` (the default), the operating system will be determined
 #'  automatically (see [Sys.info()]).
+#' @param install A [`logical`] scalar: if OxCal binary is not found,
+#'  should it be downloaded and installed?
 #' @param ask A [`logical`] scalar: if OxCal is not installed, should the user
-#'  be asked to download it?
-#'  If `FALSE` and \R is being used interactively, will raise an error if the
-#'  OxCal executable cannot be found.
-#'  If `FALSE` and \R is not being used interactively, will try to download
-#'  OxCal.
+#'  be asked before downloading it?
 #' @inheritParams oxcal_install
 #' @details
 #'  Downloads the latest version of Oxcal (if needed) and sets the executable
@@ -21,8 +19,9 @@
 #' @author N. Frerebeau
 #' @family OxCal tools
 #' @export
-oxcal_configure <- function(command = NULL, os = NULL, ask = TRUE,
+oxcal_configure <- function(command = NULL, os = NULL, install = TRUE,
                             install_location = NULL, install_url = NULL,
+                            ask = TRUE,
                             verbose = getOption("ArchaeoCal.verbose")) {
   if (is.null(command)) {
     ## Default list of possible locations
@@ -47,29 +46,27 @@ oxcal_configure <- function(command = NULL, os = NULL, ask = TRUE,
   command <- setdiff(command, "")
   for (path in command) {
     if (file.exists(path)) {
-      if (verbose) message(sprintf("OxCal binary found at %s", path))
+      if (isTRUE(verbose)) message(sprintf("OxCal binary found at %s", path))
       Sys.chmod(path, mode = "0777")
       options(ArchaeoCal.oxcal = path)
       return(invisible(path))
+    } else {
+      if (isTRUE(verbose))
+        message(sprintf("Could not find OxCal binary at %s", path))
     }
   }
 
   ## Try to install?
-  download <- ""
-  if (ask && interactive()) {
-    cat(
-      "OxCal doesn't seem to be installed.",
-      "Do you want to download it?",
-      "1. Yes",
-      "2. No",
-      sep = "\n"
+  download <- isTRUE(install)
+  if (isTRUE(install) && isTRUE(ask)) {
+    download <- utils::askYesNo(
+      msg = paste0(c("OxCal doesn't seem to be installed.",
+                     "Do you want to download it?"), collapse = "\n"),
+      default = FALSE,
+      prompts = gettext(c("Yes", "No", "Cancel"))
     )
-    download <- readline("Choice: ")
   }
-  if (!ask && !interactive()) {
-    download <- "1"
-  }
-  if (download == "1") {
+  if (isTRUE(download)) {
     ## Install
     oxcal_location <- oxcal_install(
       install_url = install_url,
@@ -78,16 +75,14 @@ oxcal_configure <- function(command = NULL, os = NULL, ask = TRUE,
     )
 
     ## Configure
-    invisible(
-      oxcal_configure(
-        command = oxcal_location,
-        os = os, ask = ask,
-        install_location = install_location,
-        install_url = install_url
-      )
+    path <- oxcal_configure(
+      command = oxcal_location,
+      os = os, ask = ask,
+      install_location = install_location,
+      install_url = install_url
     )
+    return(invisible(path))
   } else {
-    msg <- "Could not find OxCal binary at any of the following locations:\n%s."
-    stop(sprintf(msg, paste0(command, collapse = "\n")), call. = FALSE)
+    stop("OxCal was not installed.", call. = FALSE)
   }
 }

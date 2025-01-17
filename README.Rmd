@@ -32,7 +32,7 @@ You can install the latest version of **ArchaeoCal** from [our repository](https
 
 ```{r universe-installation, eval=FALSE}
 options(repos = c(CRAN = "https://cloud.r-project.org",
-                  tesselle = "https://archaeostat.r-universe.dev"))
+                  universe = "https://archaeostat.r-universe.dev"))
 
 install.packages("ArchaeoCal")
 ```
@@ -46,7 +46,38 @@ remotes::install_github("ArchaeoStat/ArchaeoCal")
 
 ## Usage
 
-```{r packages-load}
-## Load packages
-library(ArchaeoCal)
+This example uses data available through the [**ArchaeoData**](https://github.com/ArchaeoStat/ArchaeoData) package which is available in a [separate repository](https://archaeostat.r-universe.dev). **ArchaeoData** provides OxCal [@bronkramsey2009] input models.
+
+```{r ArchaeoData, eval=FALSE}
+## Install the latest version
+install.packages("ArchaeoData", repos = "https://archaeostat.r-universe.dev")
 ```
+
+```{r setup, eval=FALSE}
+## Load package
+library(ArchaeoCal)
+
+## Download OxCal
+oxcal_configure(ask = FALSE)
+```
+
+```{r excute, eval=FALSE}
+## Construct the path to the OxCal script
+path <- file.path("oxcal", "ksarakil", "ksarakil.oxcal")
+file <- system.file(path, package = "ArchaeoData")
+
+## Read the script from Bosch et al. 2015
+scr <- readLines(file)
+
+## Print
+# cat(scr, sep = "\n")
+
+## Execute
+## /!\ this may take a while /!\
+out <- oxcal_execute(scr, file = "path/to/my/results")
+
+## Parse OxCal output
+res <- oxcal_parse(out)
+```
+
+## References

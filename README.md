@@ -25,7 +25,7 @@ repository](https://ArchaeoStat.r-universe.dev) with:
 
 ``` r
 options(repos = c(CRAN = "https://cloud.r-project.org",
-                  tesselle = "https://archaeostat.r-universe.dev"))
+                  universe = "https://archaeostat.r-universe.dev"))
 
 install.packages("ArchaeoCal")
 ```
@@ -39,7 +39,55 @@ remotes::install_github("ArchaeoStat/ArchaeoCal")
 
 ## Usage
 
+This example uses data available through the
+[**ArchaeoData**](https://github.com/ArchaeoStat/ArchaeoData) package
+which is available in a [separate
+repository](https://archaeostat.r-universe.dev). **ArchaeoData**
+provides OxCal (Bronk Ramsey 2009) input models.
+
 ``` r
-## Load packages
-library(ArchaeoCal)
+## Install the latest version
+install.packages("ArchaeoData", repos = "https://archaeostat.r-universe.dev")
 ```
+
+``` r
+## Load package
+library(ArchaeoCal)
+
+## Download OxCal
+oxcal_configure(ask = FALSE)
+```
+
+``` r
+## Construct the path to the OxCal script
+path <- file.path("oxcal", "ksarakil", "ksarakil.oxcal")
+file <- system.file(path, package = "ArchaeoData")
+
+## Read the script from Bosch et al. 2015
+scr <- readLines(file)
+
+## Print
+# cat(scr, sep = "\n")
+
+## Execute
+## /!\ this may take a while /!\
+out <- oxcal_execute(scr, file = "path/to/my/results")
+
+## Parse OxCal output
+res <- oxcal_parse(out)
+```
+
+## References
+
+<div id="refs" class="references csl-bib-body hanging-indent"
+entry-spacing="0">
+
+<div id="ref-bronkramsey2009" class="csl-entry">
+
+Bronk Ramsey, Christopher. 2009. “Bayesian Analysis of Radiocarbon
+Dates.” *Radiocarbon* 51 (1): 337–60.
+<https://doi.org/10.1017/S0033822200033865>.
+
+</div>
+
+</div>

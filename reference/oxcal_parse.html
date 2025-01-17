@@ -36,7 +36,7 @@
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Read and Parse OxCal Output</h1>
-      <small class="dont-index">Source: <a href="https://github.com/ArchaeoStat/ArchaeoCal/blob/main/R/AllGenerics.R" class="external-link"><code>R/AllGenerics.R</code></a>, <a href="https://github.com/ArchaeoStat/ArchaeoCal/blob/main/R/oxcal_parse.R" class="external-link"><code>R/oxcal_parse.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/ArchaeoStat/ArchaeoCal/blob/main/R/oxcal_parse.R" class="external-link"><code>R/oxcal_parse.R</code></a></small>
       <div class="d-none name"><code>oxcal_parse.Rd</code></div>
     </div>
 
@@ -46,28 +46,38 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">oxcal_parse</span><span class="op">(</span><span class="va">object</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">oxcal_parse</span><span class="op">(</span><span class="va">path</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># S4 method for class 'list'</span></span>
-<span><span class="fu">oxcal_parse</span><span class="op">(</span><span class="va">object</span><span class="op">)</span></span>
+<span><span class="co"># S3 method for class 'OxCalOutput'</span></span>
+<span><span class="fu">oxcal_parse</span><span class="op">(</span><span class="va">path</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># S4 method for class 'character'</span></span>
-<span><span class="fu">oxcal_parse</span><span class="op">(</span><span class="va">object</span><span class="op">)</span></span></code></pre></div>
+<span><span class="co"># S3 method for class 'character'</span></span>
+<span><span class="fu">oxcal_parse</span><span class="op">(</span><span class="va">path</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
 
 
-<dl><dt id="arg-object">object<a class="anchor" aria-label="anchor" href="#arg-object"></a></dt>
+<dl><dt id="arg-path">path<a class="anchor" aria-label="anchor" href="#arg-path"></a></dt>
 <dd><p>A <code><a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></code> string naming a JavaScript file which the data
 are to be read from (or a <code>list</code> returned by <code><a href="oxcal_execute.html">oxcal_execute()</a></code>).</p></dd>
 
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>An <code><a href="OxCalOutput-class.html">OxCalOutput</a></code> object.</p>
-    </div>
+    <p>A <code><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></code> with class <code>OxCalResults</code> containing the following elements:</p><dl><dt><code>ocd</code></dt>
+<dd><p>A <code><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></code> of OxCal data which holds the ranges, probability
+distributions, etc. for each parameter.</p></dd>
+
+<dt><code>model</code></dt>
+<dd><p>A <code><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></code> of information about the model.</p></dd>
+
+<dt><code>calib</code></dt>
+<dd><p>A <code><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></code> of information about the calibration curve.</p></dd>
+
+
+</dl></div>
     <div class="section level2">
     <h2 id="references">References<a class="anchor" aria-label="anchor" href="#references"></a></h2>
     <p><a href="https://c14.arch.ox.ac.uk/oxcalhelp/hlp_analysis_file.html" class="external-link">https://c14.arch.ox.ac.uk/oxcalhelp/hlp_analysis_file.html</a></p>
@@ -78,8 +88,7 @@ are to be read from (or a <code>list</code> returned by <code><a href="oxcal_exe
 <code><a href="oxcal_calibrate.html">oxcal_calibrate</a>()</code>,
 <code><a href="oxcal_configure.html">oxcal_configure</a>()</code>,
 <code><a href="oxcal_execute.html">oxcal_execute</a>()</code>,
-<code><a href="oxcal_install.html">oxcal_install</a>()</code>,
-<code><a href="plot.html">plot</a>()</code></p></div>
+<code><a href="oxcal_install.html">oxcal_install</a>()</code></p></div>
     </div>
     <div class="section level2">
     <h2 id="author">Author<a class="anchor" aria-label="anchor" href="#author"></a></h2>
@@ -114,9 +123,7 @@ are to be read from (or a <code>list</code> returned by <code><a href="oxcal_exe
 <span class="r-in"><span><span class="va">out</span> <span class="op">&lt;-</span> <span class="fu"><a href="oxcal_execute.html">oxcal_execute</a></span><span class="op">(</span><span class="va">scr</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu">oxcal_parse</span><span class="op">(</span><span class="va">out</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="fu"><a href="plot.html">plot</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="plot.html">plot</a></span><span class="op">(</span><span class="va">res</span>, likelihood <span class="op">=</span> <span class="cn">TRUE</span>, posterior <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="plot.html">plot</a></span><span class="op">(</span><span class="va">res</span>, likelihood <span class="op">=</span> <span class="cn">FALSE</span>, posterior <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">as.data.frame</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span> <span class="co"># }</span></span></span>
 </code></pre></div>
     </div>

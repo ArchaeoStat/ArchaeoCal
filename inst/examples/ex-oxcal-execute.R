@@ -24,7 +24,5 @@ scr <- 'Plot()
 out <- oxcal_execute(scr)
 res <- oxcal_parse(out)
 
-plot(res)
-plot(res, likelihood = TRUE, posterior = FALSE)
-plot(res, likelihood = FALSE, posterior = TRUE)
+as.data.frame(res)
 }

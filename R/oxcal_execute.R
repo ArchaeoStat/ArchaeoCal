@@ -4,10 +4,14 @@
 #' @param file A [`character`] string naming a file (without extension) to
 #'  write `script` to. Output files will be named after `file` and written to
 #'  the same directory.
+#' @param mcmc A [`character`] string giving the name of the output file for
+#'  the MCMC samples (without extension). It must match the `Name` argument of
+#'  OxCal's [`MCMC_Sample()`](https://intchron.org/tools/oxcalhelp/hlp_commands.html)
+#'  function. Only used if `script` contains the `MCMC_Sample()` command.
 #' @param verbose A [`logical`] scalar: should status updates be displayed?
 #' @param ... Further parameters to be passed to [system2()].
 #' @return
-#'  A list with the following elements:
+#'  A [`list`] with class `OxCalOutput` containing the following elements:
 #'  \describe{
 #'   \item{`oxcal`}{A [`character`] string giving the path to the .oxcal file.}
 #'   \item{`js`}{A [`character`] string giving the path to the .js file.}
@@ -21,7 +25,7 @@
 #' @author N. Frerebeau
 #' @family OxCal tools
 #' @export
-oxcal_execute <- function(script, file = NULL,
+oxcal_execute <- function(script, file = NULL, mcmc = "MCMC_Sample",
                           verbose = getOption("ArchaeoCal.verbose"), ...) {
   ## Construct output path
   if (is.null(file)) {
@@ -43,24 +47,20 @@ oxcal_execute <- function(script, file = NULL,
   out <- oxcal_call(oxcal, ...)
   if (verbose) cat(out)
 
-  output <- list(
-    oxcal = oxcal,
-    js = sprintf("%s.js", file),
-    log = sprintf("%s.log", file),
-    txt = sprintf("%s.txt", file)
-  )
-
-  ## MCMC ?
-  csv <- sprintf("%s.csv", file)
+  ## MCMC?
+  csv <- sprintf("%s.csv", mcmc)
   csv <- if (file.exists(csv)) csv else character(0)
 
   ## Output files
-  list(
-    oxcal = oxcal,
-    js = sprintf("%s.js", file),
-    log = sprintf("%s.log", file),
-    txt = sprintf("%s.txt", file),
-    csv = csv
+  structure(
+    list(
+      oxcal = oxcal,
+      js = assert_exists(sprintf("%s.js", file)),
+      log = assert_exists(sprintf("%s.log", file)),
+      txt = assert_exists(sprintf("%s.txt", file)),
+      csv = csv
+    ),
+    class = "OxCalOutput"
   )
 }
 

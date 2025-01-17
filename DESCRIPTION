@@ -10,10 +10,6 @@ License: GPL (>= 3)
 URL: https://archaeostat.github.io/archaeocal/
 BugReports: https://github.com/ArchaeoStat/ArchaeoCal/issues
 Imports: 
-    arkhe (>= 1.9.0),
-    graphics,
-    grDevices,
-    methods,
     utils,
     V8
 Suggests: 
@@ -25,19 +21,3 @@ VignetteBuilder:
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
-Collate: 
-    'AllClasses.R'
-    'AllGenerics.R'
-    'ArchaeoCal-internal.R'
-    'ArchaeoCal-package.R'
-    'coerce.R'
-    'mutators.R'
-    'oxcal_calibrate.R'
-    'oxcal_configure.R'
-    'oxcal_execute.R'
-    'oxcal_install.R'
-    'oxcal_parse.R'
-    'plot.R'
-    'show.R'
-    'validate.R'
-    'zzz.R'

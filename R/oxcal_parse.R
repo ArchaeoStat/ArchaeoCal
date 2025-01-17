@@ -1,43 +1,52 @@
 # PARSE OXCAL OUTPUT
-#' @include AllGenerics.R
-NULL
+
+#' Read and Parse OxCal Output
+#'
+#' @param path A [`character`] string naming a JavaScript file which the data
+#'  are to be read from (or a `list` returned by [oxcal_execute()]).
+#' @return
+#'  A [`list`] with class `OxCalResults` containing the following elements:
+#'  \describe{
+#'   \item{`ocd`}{A [`list`] of OxCal data which holds the ranges, probability
+#'   distributions, etc. for each parameter.}
+#'   \item{`model`}{A [`list`] of information about the model.}
+#'   \item{`calib`}{A [`list`] of information about the calibration curve.}
+#'  }
+#' @example inst/examples/ex-oxcal-execute.R
+#' @references
+#'  \url{https://c14.arch.ox.ac.uk/oxcalhelp/hlp_analysis_file.html}
+#' @author N. Frerebeau
+#' @family OxCal tools
+#' @export
+oxcal_parse <- function(path) {
+  UseMethod("oxcal_parse", path)
+}
 
 #' @export
 #' @rdname oxcal_parse
-#' @aliases oxcal_parse,list-method
-setMethod(
-  f = "oxcal_parse",
-  signature = c(object = "list"),
-  definition = function(object) {
-    js <- object$js
-    if (is.null(js)) stop("Could not find the path.", call. = FALSE)
-    methods::callGeneric(js)
+oxcal_parse.OxCalOutput <- function(path) {
+  js <- path$js
+  if (is.null(js) || !file.exists(js)) {
+    stop("Could not find the path.", call. = FALSE)
   }
-)
+  oxcal_parse(js)
+}
 
 #' @export
 #' @rdname oxcal_parse
-#' @aliases oxcal_parse,character-method
-setMethod(
-  f = "oxcal_parse",
-  signature = c(object = "character"),
-  definition = function(object) {
-    ox <- V8::v8()
-    ox$eval("ocd={};")
-    ox$eval("calib={};")
-    ox$eval("model={};")
-    ox$source(object)
+oxcal_parse.character <- function(path) {
+  ox <- V8::v8()
+  ox$eval("ocd={};")
+  ox$eval("calib={};")
+  ox$eval("model={};")
+  ox$source(path)
 
-    ocd <- ox$get("ocd")
-    model <- ox$get("model")
-    calib <- ox$get("calib")
-
-    .OxCalOutput(
-      ocd = ocd,
-      model = model,
-      calib = calib
-      # oxcal = ocd[[1]]$ref,
-      # curve = calib[[1]]$ref
-    )
-  }
-)
+  structure(
+    list(
+      ocd = ox$get("ocd"),
+      model = ox$get("model"),
+      calib = ox$get("calib")
+    ),
+    class = "OxCalResults"
+  )
+}

@@ -53,9 +53,7 @@ scr <- 'Plot()
 out <- oxcal_execute(scr)
 res <- oxcal_parse(out)
 
-plot(res)
-plot(res, likelihood = TRUE, posterior = FALSE)
-plot(res, likelihood = FALSE, posterior = TRUE)
+as.data.frame(res)
 }
 }
 \seealso{
@@ -63,8 +61,7 @@ Other OxCal tools:
 \code{\link{oxcal_calibrate}()},
 \code{\link{oxcal_configure}()},
 \code{\link{oxcal_execute}()},
-\code{\link{oxcal_parse}()},
-\code{\link{plot}()}
+\code{\link{oxcal_parse}()}
 }
 \author{
 N. Frerebeau

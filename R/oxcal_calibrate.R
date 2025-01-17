@@ -7,7 +7,7 @@
 #'  to be calibrated.
 #' @param curve A [`character`] string specifying the calibration curve to be
 #'  used.
-#' @return An [`OxCalOutput-class`] object.
+#' @return A [`list`] with class `OxCalResults` (see [oxcal_parse()]).
 #' @example inst/examples/ex-oxcal-calibrate.R
 #' @author N. Frerebeau
 #' @family OxCal tools

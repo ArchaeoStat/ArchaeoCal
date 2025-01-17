@@ -25,7 +25,8 @@ knitr::opts_chunk$set(
 )
 ```
 
-This vignette uses data available through the [**ArchaeoData**](https://github.com/ArchaeoStat/ArchaeoData) package which is available in a [separate repository](https://archaeostat.r-universe.dev). **ArchaeoData** provides OxCal [@bronkramsey2009] input models.
+This vignette uses data available through the [**ArchaeoData**](https://github.com/ArchaeoStat/ArchaeoData) package which is available in a [separate repository](https://archaeostat.r-universe.dev).
+**ArchaeoData** provides OxCal (Bronk Ramsey, 2009) input models.
 
 ```{r ArchaeoData, eval=FALSE}
 ## Install the latest version
@@ -37,13 +38,16 @@ install.packages("ArchaeoData", repos = "https://archaeostat.r-universe.dev")
 library(ArchaeoCal)
 
 ## Download OxCal
-oxcal_configure()
+oxcal_configure(ask = FALSE)
 ```
 
 ```{r excute}
+## Construct path to file
+path <- file.path("oxcal", "ksarakil", "ksarakil.oxcal")
+file <- system.file(path, package = "ArchaeoData")
+
 ## Read OxCal script from Bosch et al. 2015
-path <- system.file("oxcal/ksarakil/ksarakil.oxcal", package = "ArchaeoData")
-scr <- readLines(path)
+scr <- readLines(file)
 
 ## Print script
 # cat(scr, sep = "\n")
@@ -56,9 +60,6 @@ out <- oxcal_execute(scr)
 res <- oxcal_parse(out)
 ```
 
-```{r plot, fig.height=9}
-par(mar = c(5, 6, 1, 1) + 0.1)
-plot(res)
-```
-
 ## References
+
+Bronk Ramsey, C. (2009). Bayesian Analysis of Radiocarbon Dates. *Radiocarbon*, 51(1): 337-360. DOI: [10.1017/S0033822200033865(https://doi.org/10.1017/S0033822200033865).

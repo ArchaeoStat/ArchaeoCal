@@ -2,7 +2,7 @@
   ## Set package options
   op <- options()
   op.ArchaeoCal <- list(
-    ArchaeoCal.verbose = TRUE,
+    ArchaeoCal.verbose = interactive(),
     ArchaeoCal.oxcal = ""
   )
   toset <- !(names(op.ArchaeoCal) %in% names(op))

@@ -19,7 +19,7 @@ to be calibrated.}
 used.}
 }
 \value{
-An \code{\linkS4class{OxCalOutput}} object.
+A \code{\link{list}} with class \code{OxCalResults} (see \code{\link[=oxcal_parse]{oxcal_parse()}}).
 }
 \description{
 14C Calibration with OxCal
@@ -36,7 +36,7 @@ cal <- oxcal_calibrate(
   errors = c(45, 35)
 )
 
-plot(cal)
+as.data.frame(cal)
 }
 }
 \seealso{
@@ -44,8 +44,7 @@ Other OxCal tools:
 \code{\link{oxcal_configure}()},
 \code{\link{oxcal_execute}()},
 \code{\link{oxcal_install}()},
-\code{\link{oxcal_parse}()},
-\code{\link{plot}()}
+\code{\link{oxcal_parse}()}
 }
 \author{
 N. Frerebeau

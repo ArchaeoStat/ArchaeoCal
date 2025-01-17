@@ -9,5 +9,5 @@ cal <- oxcal_calibrate(
   errors = c(45, 35)
 )
 
-plot(cal)
+as.data.frame(cal)
 }

@@ -28,7 +28,3 @@
 #' @docType package
 #' @keywords internal
 "_PACKAGE"
-
-#' @import arkhe
-#' @importFrom methods new setGeneric setMethod setValidity .valueClassTest
-NULL

@@ -31,8 +31,11 @@ oxcal_execute <- function(script, file = NULL, mcmc = "MCMC_Sample",
   if (is.null(file)) {
     file <- tempfile()
   } else {
-    direct <- dirname(file)
-    dir.create(direct, showWarnings = FALSE, recursive = TRUE)
+    file <- path.expand(file)
+    dir <- dirname(file)
+    if (!dir.exists(dir)) {
+      dir.create(dir, showWarnings = FALSE, recursive = TRUE)
+    }
   }
 
   ## Write script

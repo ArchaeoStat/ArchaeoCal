@@ -28,8 +28,10 @@ A \code{\link{data.frame}} with the following columns:
 \item{\code{error}}{}
 \item{\code{agreement}}{}
 \item{\code{convergence}}{}
-\item{\code{likelihood}}{}
-\item{\code{posterior}}{}
+\item{\code{like_range}}{A \code{list} giving the confidence intervals of the likelihood.}
+\item{\code{like_density}}{A \code{list} giving the likelihood.}
+\item{\code{post_range}}{A \code{list} giving the confidence intervals of the posterior probability.}
+\item{\code{post_density}}{A \code{list} giving the posterior probability.}
 }
 }
 \description{

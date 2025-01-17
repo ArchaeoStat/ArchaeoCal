@@ -1,0 +1,336 @@
+OxCal v4.4.4 Bronk Ramsey (2021); r:5
+Atmospheric data from Reimer et al (2020)
+T(5)
+  68.3% probability
+    -1 (68.3%) 1
+  95.4% probability
+    -3 (95.4%) 3
+U(0,4)
+  68.3% probability
+    0 (68.3%) 4
+  95.4% probability
+    0 (95.4%) 4
+General Outlier_Model()
+Marine13 Curve(marine13.14c)
+ Marine13 marine curve (Reimer et al 2013)
+LocalMarine Delta_R(53,43)
+  68.3% probability
+    8 (68.3%) 98
+  95.4% probability
+    -34 (95.4%) 140
+Ethelruda 
+start dated IUP Boundary()
+GrA-53000 R_Date(40550,350)
+  68.3% probability
+    42107BC (68.3%) 41386BC
+  95.4% probability
+    42478BC (95.4%) 41120BC
+( Phase Layer XXII
+Layer XXII Phase()
+) Phase Layer XXII
+end dated IUP Boundary()
+start Ahmarian Boundary()
+GrA-57597 R_Date(40040,340)
+  68.3% probability
+    41612BC (68.3%) 40999BC
+  95.4% probability
+    42040BC (95.4%) 40777BC
+( Phase Layer XX
+Layer XX Phase()
+) Phase Layer XX
+GrA-53004 R_Date(39390,330)
+  68.3% probability
+    41100BC (68.3%) 40620BC
+  95.4% probability
+    41377BC (95.4%) 40388BC
+( Phase Layer XIX
+Layer XIX Phase()
+) Phase Layer XIX
+GrA-57542 R_Date(36290,240)
+  68.3% probability
+    38834BC (68.3%) 38207BC
+  95.4% probability
+    39147BC (95.4%) 37924BC
+( Phase Layer XVIII
+Layer XVIII Phase()
+) Phase Layer XVIII
+GrA-54846 R_Date(39850,340)
+  68.3% probability
+    41441BC (68.3%) 40880BC
+  95.4% probability
+    41851BC (95.4%) 40651BC
+GrA-57603 R_Date(38260,260)
+  68.3% probability
+    40361BC (68.3%) 39967BC
+  95.4% probability
+    40565BC (95.4%) 39766BC
+GrA-57602 R_Date(36730,240)
+  68.3% probability
+    39287BC (68.3%) 38700BC
+  95.4% probability
+    39516BC (95.4%) 38388BC
+GrA-53001 R_Date(34090,220)
+  68.3% probability
+    36506BC (68.3%) 35820BC
+  95.4% probability
+    36687BC (95.4%) 35251BC
+Egbert 
+ Egbert = ( Phase Layer XVII
+Layer XVII Phase()
+) Phase Layer XVII
+GrA-54847 R_Date(39910,370)
+  68.3% probability
+    41522BC (68.3%) 40896BC
+  95.4% probability
+    41976BC (95.4%) 40666BC
+GrA-57599 R_Date(39890,310)
+  68.3% probability
+    41448BC (68.3%) 40921BC
+  95.4% probability
+    41824BC (95.4%) 40704BC
+GrA-57598 R_Date(37320,270)
+  68.3% probability
+    39776BC (68.3%) 39281BC
+  95.4% probability
+    40002BC (95.4%) 38982BC
+GrA-57544 R_Date(35960,230)
+  68.3% probability
+    38442BC (68.3%) 37852BC
+  95.4% probability
+    38784BC (95.4%) 37568BC
+( Phase Layer XVI
+Layer XVI Phase()
+) Phase Layer XVI
+end Ahmarian Boundary()
+start UP Boundary()
+GrA-57545 R_Date(35880,260)
+  68.3% probability
+    38388BC (68.3%) 37740BC
+  95.4% probability
+    38762BC (95.4%) 37412BC
+( Phase Layer XII
+Layer XII Phase()
+) Phase Layer XII
+GrA-53006 R_Date(34310,230)
+  68.3% probability
+    36709BC (68.3%) 36140BC
+  95.4% probability
+    36940BC (95.4%) 35634BC
+( Phase Layer XI
+Layer XI Phase()
+) Phase Layer XI
+GrA-54848 R_Date(28810,130)
+  68.3% probability
+    30604BC (68.3%) 29983BC
+  95.4% probability
+    30845BC (95.4%) 29740BC
+( Phase Layer VI
+Layer VI Phase()
+) Phase Layer VI
+end UP Boundary()
+start EPI Boundary()
+GrA-53005 R_Date(26210,130)
+  68.3% probability
+    28256BC (68.3%) 27748BC
+  95.4% probability
+    28482BC (95.4%) 27544BC
+( Phase Layer V
+Layer V Phase()
+) Phase Layer V
+end EPI Boundary()
+( Sequence 
+Sequence()
+) Sequence 
+i : Using logs - function probability low
+Posterior 
+( MCMC(30000)
+Overall agreement 116.6%
+Dynamic agreement 118.3%
+General Posterior 
+  68.3% probability
+    775 (68.3%) 3007
+  95.4% probability
+    -327 ( 0.7%) -49
+    296 (78.9%) 3504
+    4247 (15.9%) 5806
+Posterior 
+Posterior 
+  68.3% probability
+    3 (68.3%) 4
+  95.4% probability
+    3 (95.4%) 4
+ Agreement 100.0%
+LocalMarine Posterior 
+  68.3% probability
+    12 (68.3%) 98
+  95.4% probability
+    -30 (95.4%) 140
+ Agreement 100.7%
+Ethelruda Posterior 
+  68.3% probability
+    47437BC (61.9%) 44418BC
+    44412BC ( 2.9%) 44261BC
+    44250BC ( 0.4%) 44228BC
+    44224BC ( 0.9%) 44171BC
+    44165BC ( 1.2%) 44102BC
+    44094BC ( 0.2%) 44086BC
+    44074BC ( 0.2%) 44064BC
+    44058BC ( 0.1%) 44054BC
+    43996BC ( 0.2%) 43985BC
+    43975BC ( 0.2%) 43964BC
+    43878BC ( 0.1%) 43874BC
+  95.4% probability
+    47441BC (95.4%) 42356BC
+start dated IUP Posterior 
+  68.3% probability
+    42683BC (68.3%) 41524BC
+  95.4% probability
+    44341BC (95.4%) 41240BC
+GrA-53000 Posterior 
+  68.3% probability
+    42140BC (68.3%) 41486BC
+  95.4% probability
+    42516BC (95.4%) 41254BC
+ Agreement 107.4%
+end dated IUP Posterior 
+  68.3% probability
+    41838BC (68.3%) 41230BC
+  95.4% probability
+    42272BC (95.4%) 41054BC
+start Ahmarian Posterior 
+  68.3% probability
+    41323BC (68.3%) 41030BC
+  95.4% probability
+    41514BC (95.4%) 40897BC
+GrA-57597 Posterior 
+  68.3% probability
+    41298BC (68.3%) 41022BC
+  95.4% probability
+    41462BC (95.4%) 40895BC
+ Agreement 126.0%
+GrA-53004 Posterior 
+  68.3% probability
+    41272BC (68.3%) 41009BC
+  95.4% probability
+    41426BC (95.4%) 40881BC
+ Agreement  74.8%
+GrA-57542 Posterior 
+  68.3% probability
+    41256BC (68.3%) 40996BC
+  95.4% probability
+    41408BC (95.4%) 40862BC
+ Agreement  99.6%
+GrA-54846 Posterior 
+  68.3% probability
+    41206BC (68.3%) 40955BC
+  95.4% probability
+    41356BC (95.4%) 40810BC
+ Agreement 132.0%
+GrA-57603 Posterior 
+  68.3% probability
+    41211BC (68.3%) 40951BC
+  95.4% probability
+    41400BC (95.4%) 40773BC
+ Agreement  99.2%
+GrA-57602 Posterior 
+  68.3% probability
+    41210BC (68.3%) 40950BC
+  95.4% probability
+    41388BC (95.4%) 40782BC
+ Agreement 100.4%
+GrA-53001 Posterior 
+  68.3% probability
+    41211BC (68.3%) 40951BC
+  95.4% probability
+    41390BC (95.4%) 40782BC
+ Agreement 103.0%
+Egbert Posterior 
+  68.3% probability
+    41210BC (68.3%) 40951BC
+  95.4% probability
+    41387BC (95.4%) 40784BC
+GrA-54847 Posterior 
+  68.3% probability
+    41155BC (68.3%) 40876BC
+  95.4% probability
+    41351BC (95.4%) 40652BC
+ Agreement 123.8%
+GrA-57599 Posterior 
+  68.3% probability
+    41154BC (68.3%) 40877BC
+  95.4% probability
+    41351BC (95.4%) 40658BC
+ Agreement 119.7%
+GrA-57598 Posterior 
+  68.3% probability
+    41158BC (68.3%) 40871BC
+  95.4% probability
+    41360BC (95.4%) 40598BC
+ Agreement 100.3%
+GrA-57544 Posterior 
+  68.3% probability
+    41158BC (68.3%) 40872BC
+  95.4% probability
+    41360BC (95.4%) 40596BC
+ Agreement  99.2%
+end Ahmarian Posterior 
+  68.3% probability
+    41138BC (68.3%) 40817BC
+  95.4% probability
+    41355BC (95.4%) 40457BC
+start UP Posterior 
+  68.3% probability
+    39998BC ( 0.1%) 39994BC
+    39969BC ( 1.2%) 39928BC
+    39912BC (67.0%) 38055BC
+  95.4% probability
+    40928BC (95.4%) 37788BC
+GrA-57545 Posterior 
+  68.3% probability
+    38338BC (68.3%) 37674BC
+  95.4% probability
+    38747BC (95.4%) 37284BC
+ Agreement 101.8%
+GrA-53006 Posterior 
+  68.3% probability
+    36720BC (68.3%) 36126BC
+  95.4% probability
+    37002BC (95.4%) 35474BC
+ Agreement 101.9%
+GrA-54848 Posterior 
+  68.3% probability
+    30756BC (68.3%) 30008BC
+  95.4% probability
+    36483BC ( 8.7%) 33922BC
+    31152BC (86.8%) 29586BC
+ Agreement  89.9%
+end UP Posterior 
+  68.3% probability
+    30428BC (68.3%) 28867BC
+  95.4% probability
+    35518BC ( 0.4%) 35312BC
+    35304BC ( 4.8%) 33309BC
+    33292BC ( 0.3%) 33150BC
+    33086BC ( 0.1%) 33025BC
+    32986BC ( 0.1%) 32940BC
+    32683BC ( 0.1%) 32624BC
+    31033BC (89.6%) 27892BC
+start EPI Posterior 
+  68.3% probability
+    29002BC (68.1%) 27836BC
+    27830BC ( 0.2%) 27825BC
+  95.4% probability
+    30545BC (95.4%) 27494BC
+GrA-53005 Posterior 
+  68.3% probability
+    28264BC (68.3%) 27736BC
+  95.4% probability
+    28565BC (95.4%) 27485BC
+ Agreement 101.5%
+end EPI Posterior 
+  68.3% probability
+    28282BC (68.1%) 26804BC
+    26788BC ( 0.2%) 26780BC
+  95.4% probability
+    28556BC (95.4%) 23768BC
+) MCMC(4224000)

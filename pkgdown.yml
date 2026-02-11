@@ -1,8 +1,8 @@
 pandoc: 3.1.11
-pkgdown: 2.1.1
+pkgdown: 2.2.0
 pkgdown_sha: ~
 articles: {}
-last_built: 2025-01-17T17:24Z
+last_built: 2026-02-11T15:24Z
 urls:
   reference: https://archaeostat.github.io/archaeocal/reference
   article: https://archaeostat.github.io/archaeocal/articles

@@ -6,8 +6,9 @@
 \usage{
 oxcal_execute(
   script,
-  file = NULL,
-  mcmc = "MCMC_Sample",
+  file,
+  path = oxcal_path(),
+  mcmc = NULL,
   verbose = getOption("ArchaeoCal.verbose"),
   ...
 )
@@ -19,12 +20,15 @@ oxcal_execute(
 write \code{script} to. Output files will be named after \code{file} and written to
 the same directory.}
 
+\item{path}{A \code{\link{character}} string giving the path to OxCal executable.}
+
 \item{mcmc}{A \code{\link{character}} string giving the name of the output file for
 the MCMC samples (without extension). It must match the \code{Name} argument of
 OxCal's \href{https://intchron.org/tools/oxcalhelp/hlp_commands.html}{\code{MCMC_Sample()}}
 function. Only used if \code{script} contains the \code{MCMC_Sample()} command.}
 
-\item{verbose}{A \code{\link{logical}} scalar: should status updates be displayed?}
+\item{verbose}{A \code{\link{logical}} scalar: should \R report extra information on
+progress?}
 
 \item{...}{Further parameters to be passed to \code{\link[=system2]{system2()}}.}
 }
@@ -74,14 +78,6 @@ as.data.frame(res)
 \references{
 \url{https://c14.arch.ox.ac.uk/oxcalhelp/hlp_analysis_file.html}
 }
-\seealso{
-Other OxCal tools: 
-\code{\link{oxcal_calibrate}()},
-\code{\link{oxcal_configure}()},
-\code{\link{oxcal_install}()},
-\code{\link{oxcal_parse}()}
-}
 \author{
 N. Frerebeau
 }
-\concept{OxCal tools}

@@ -2,20 +2,20 @@
 % Please edit documentation in R/oxcal_configure.R
 \name{oxcal_configure}
 \alias{oxcal_configure}
-\title{Setup OxCal}
+\title{Configure OxCal}
 \usage{
 oxcal_configure(
-  command = NULL,
+  path = oxcal_path(),
   os = NULL,
   install = TRUE,
-  install_location = NULL,
-  install_url = NULL,
-  ask = TRUE,
-  verbose = getOption("ArchaeoCal.verbose")
+  ask = interactive(),
+  force = FALSE,
+  verbose = getOption("ArchaeoCal.verbose"),
+  ...
 )
 }
 \arguments{
-\item{command}{A \code{\link{character}} string specifying the path to the OxCal
+\item{path}{A \code{\link{character}} string specifying the path to the OxCal
 directory.}
 
 \item{os}{A \code{\link{character}} string specifying the operating system of the
@@ -26,23 +26,23 @@ automatically (see \code{\link[=Sys.info]{Sys.info()}}).}
 \item{install}{A \code{\link{logical}} scalar: if OxCal binary is not found,
 should it be downloaded and installed?}
 
-\item{install_location}{A \code{\link{character}} string specifying the directory to
-extract OxCal files to. It will be created if necessary
-(see \code{\link[utils:unzip]{utils::unzip()}}).}
-
-\item{install_url}{A \code{\link{character}} string specifying the url from which
-OxCal could be installed.}
-
 \item{ask}{A \code{\link{logical}} scalar: if OxCal is not installed, should the user
 be asked before downloading it?}
 
-\item{verbose}{A \code{\link{logical}} scalar: should status updates be displayed?}
+\item{force}{A \code{\link{logical}} scalar: if OxCal is already installed, should
+reinstallation be forced?}
+
+\item{verbose}{A \code{\link{logical}} scalar: should \R report extra information on
+progress?}
+
+\item{...}{Further arguments to be passed to \code{\link[=oxcal_install]{oxcal_install()}}.}
 }
 \value{
+\code{oxcal_configure()} is called for its side-effect.
 Invisibly returns the path to the OxCal executable.
 }
 \description{
-Setup OxCal
+Configure OxCal
 }
 \details{
 Downloads the latest version of Oxcal (if needed) and sets the executable
@@ -78,14 +78,6 @@ res <- oxcal_parse(out)
 as.data.frame(res)
 }
 }
-\seealso{
-Other OxCal tools: 
-\code{\link{oxcal_calibrate}()},
-\code{\link{oxcal_execute}()},
-\code{\link{oxcal_install}()},
-\code{\link{oxcal_parse}()}
-}
 \author{
 N. Frerebeau
 }
-\concept{OxCal tools}

@@ -1,14 +1,8 @@
 # HELPERS
 
-#' Default value for NULL
-#'
-#' Replaces `NULL` with a default value.
-#' @param x,y An object.
-#' @return If `x` is `NULL`, returns `y`; otherwise returns `x`.
-#' @keywords internal
-#' @noRd
-`%||%` <- function(x, y) {
-  if (is.null(x)) y else x
+## https://michaelchirico.github.io/potools/articles/developers.html
+tr_ <- function(...) {
+  enc2utf8(gettext(paste0(...), domain = "R-aion"))
 }
 
 # Reexport from base on newer versions of R to avoid conflict messages

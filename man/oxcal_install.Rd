@@ -2,29 +2,34 @@
 % Please edit documentation in R/oxcal_install.R
 \name{oxcal_install}
 \alias{oxcal_install}
-\title{Download OxCal}
+\title{Download and Install OxCal}
 \usage{
 oxcal_install(
-  install_url = NULL,
-  install_location = NULL,
-  verbose = getOption("ArchaeoCal.verbose")
+  target,
+  source = "https://c14.arch.ox.ac.uk/OxCalDistribution.zip",
+  verbose = getOption("ArchaeoCal.verbose"),
+  ...
 )
 }
 \arguments{
-\item{install_url}{A \code{\link{character}} string specifying the url from which
-OxCal could be installed.}
-
-\item{install_location}{A \code{\link{character}} string specifying the directory to
+\item{target}{A \code{\link{character}} string specifying the directory to
 extract OxCal files to. It will be created if necessary
 (see \code{\link[utils:unzip]{utils::unzip()}}).}
 
-\item{verbose}{A \code{\link{logical}} scalar: should status updates be displayed?}
+\item{source}{A \code{\link{character}} string specifying the url from which
+OxCal could be installed.}
+
+\item{verbose}{A \code{\link{logical}} scalar: should \R report extra information on
+progress?}
+
+\item{...}{Currently not used.}
 }
 \value{
+\code{oxcal_install()} is called for its side-effect.
 Invisibly returns the path to the OxCal directory.
 }
 \description{
-Download OxCal
+Download and Install OxCal
 }
 \examples{
 \dontrun{
@@ -56,14 +61,6 @@ res <- oxcal_parse(out)
 as.data.frame(res)
 }
 }
-\seealso{
-Other OxCal tools: 
-\code{\link{oxcal_calibrate}()},
-\code{\link{oxcal_configure}()},
-\code{\link{oxcal_execute}()},
-\code{\link{oxcal_parse}()}
-}
 \author{
 N. Frerebeau
 }
-\concept{OxCal tools}

@@ -1,5 +1,6 @@
-# PARSE OXCAL OUTPUT
+# OXCAL OUTPUT
 
+# Parse ========================================================================
 #' Read and Parse OxCal Output
 #'
 #' @param path A [`character`] string naming a JavaScript file which the data
@@ -16,7 +17,6 @@
 #' @references
 #'  \url{https://c14.arch.ox.ac.uk/oxcalhelp/hlp_analysis_file.html}
 #' @author N. Frerebeau
-#' @family OxCal tools
 #' @export
 oxcal_parse <- function(path) {
   UseMethod("oxcal_parse", path)
@@ -29,12 +29,11 @@ oxcal_parse.OxCalOutput <- function(path) {
   if (is.null(js) || !file.exists(js)) {
     stop("Could not find the path.", call. = FALSE)
   }
-  oxcal_parse(js)
+  .oxcal_parse(js)
 }
 
-#' @export
-#' @rdname oxcal_parse
-oxcal_parse.character <- function(path) {
+.oxcal_parse <- function(path) {
+  arkhe::assert_package("V8")
   ox <- V8::v8()
   ox$eval("ocd={};")
   ox$eval("calib={};")

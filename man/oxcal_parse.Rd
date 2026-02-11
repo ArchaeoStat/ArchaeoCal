@@ -3,14 +3,11 @@
 \name{oxcal_parse}
 \alias{oxcal_parse}
 \alias{oxcal_parse.OxCalOutput}
-\alias{oxcal_parse.character}
 \title{Read and Parse OxCal Output}
 \usage{
 oxcal_parse(path)
 
 \method{oxcal_parse}{OxCalOutput}(path)
-
-\method{oxcal_parse}{character}(path)
 }
 \arguments{
 \item{path}{A \code{\link{character}} string naming a JavaScript file which the data
@@ -61,14 +58,6 @@ as.data.frame(res)
 \references{
 \url{https://c14.arch.ox.ac.uk/oxcalhelp/hlp_analysis_file.html}
 }
-\seealso{
-Other OxCal tools: 
-\code{\link{oxcal_calibrate}()},
-\code{\link{oxcal_configure}()},
-\code{\link{oxcal_execute}()},
-\code{\link{oxcal_install}()}
-}
 \author{
 N. Frerebeau
 }
-\concept{OxCal tools}

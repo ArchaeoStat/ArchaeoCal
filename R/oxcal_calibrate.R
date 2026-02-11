@@ -1,3 +1,5 @@
+# OXCAL CALIBRATION
+
 #' 14C Calibration with OxCal
 #'
 #' @param names A [`character`] vector specifying the names of the dates (e.g.
@@ -8,20 +10,17 @@
 #' @param curve A [`character`] string specifying the calibration curve to be
 #'  used.
 #' @return A [`list`] with class `OxCalResults` (see [oxcal_parse()]).
+#' @seealso [oxcal_execute()]
 #' @example inst/examples/ex-oxcal-calibrate.R
 #' @author N. Frerebeau
-#' @family OxCal tools
 #' @export
 oxcal_calibrate <- function(names, dates, errors, curve = "IntCal20") {
   ## Validation
   n <- length(names)
-  if (length(dates) != n || length(errors) != n) {
-    msg <- sprintf("%s, %s and %s must have the same lenght.",
-                   sQuote("names"), sQuote("dates"), sQuote("errors"))
-    stop(msg, call. = FALSE)
-  }
+  arkhe::assert_length(dates, n)
+  arkhe::assert_length(errors, n)
   if (length(curve) != 1) {
-    stop("Please select one calibration curve.", call. = FALSE)
+    stop(tr_("Please select one calibration curve."), call. = FALSE)
   }
 
   ## OxCal options

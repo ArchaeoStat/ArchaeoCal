@@ -1,6 +1,8 @@
-#' Setup OxCal
+# OXCAL SETUP
+
+#' Configure OxCal
 #'
-#' @param command A [`character`] string specifying the path to the OxCal
+#' @param path A [`character`] string specifying the path to the OxCal
 #'  directory.
 #' @param os A [`character`] string specifying the operating system of the
 #'  workstation. It must be one of "`Linux`", "`Windows`" or "`Darwin`".
@@ -10,24 +12,24 @@
 #'  should it be downloaded and installed?
 #' @param ask A [`logical`] scalar: if OxCal is not installed, should the user
 #'  be asked before downloading it?
-#' @inheritParams oxcal_install
+#' @param force A [`logical`] scalar: if OxCal is already installed, should
+#'  reinstallation be forced?
+#' @param verbose A [`logical`] scalar: should \R report extra information on
+#'  progress?
+#' @param ... Further arguments to be passed to [oxcal_install()].
 #' @details
 #'  Downloads the latest version of Oxcal (if needed) and sets the executable
 #'  path correctly.
-#' @return Invisibly returns the path to the OxCal executable.
+#' @return
+#'  `oxcal_configure()` is called for its side-effect.
+#'  Invisibly returns the path to the OxCal executable.
 #' @example inst/examples/ex-oxcal-execute.R
 #' @author N. Frerebeau
-#' @family OxCal tools
 #' @export
-oxcal_configure <- function(command = NULL, os = NULL, install = TRUE,
-                            install_location = NULL, install_url = NULL,
-                            ask = TRUE,
-                            verbose = getOption("ArchaeoCal.verbose")) {
-  if (is.null(command)) {
-    ## Default list of possible locations
-    command <- c(getOption("ArchaeoCal.oxcal"), "OxCal")
-  }
-
+oxcal_configure <- function(path = oxcal_path(), os = NULL,
+                            install = TRUE, ask = interactive(), force = FALSE,
+                            verbose = getOption("ArchaeoCal.verbose"), ...) {
+  ## Look for OxCal
   ## Try to construct the executable path
   operator <- if (is.null(os)) Sys.info()["sysname"] else os
   binary <- switch(
@@ -35,54 +37,62 @@ oxcal_configure <- function(command = NULL, os = NULL, install = TRUE,
     Linux = "OxCalLinux",
     Windows = "OxCalWin.exe",
     Darwin = "OxCalMac",
-    stop(sprintf("Unknown operating system: %s.",
-                 sQuote(operator)), call. = FALSE)
+    stop(sprintf(tr_("Unknown operating system: %s."),
+                 dQuote(operator)), call. = FALSE)
   )
-  if (!any(grepl(pattern = binary, x = command))) {
-    command <- file.path(command, "bin", binary)
+  if (!grepl(binary, path, ignore.case = TRUE)) {
+    path_exe <- file.path(path, "bin", binary)
+  } else {
+    path_exe <- path
   }
 
-  ## Validation
-  command <- setdiff(command, "")
-  for (path in command) {
-    if (file.exists(path)) {
-      if (isTRUE(verbose)) message(sprintf("OxCal binary found at %s", path))
-      Sys.chmod(path, mode = "0777")
-      options(ArchaeoCal.oxcal = path)
-      return(invisible(path))
-    } else {
-      if (isTRUE(verbose))
-        message(sprintf("Could not find OxCal binary at %s", path))
+  if (file.exists(path_exe)) {
+    if (isTRUE(verbose)) {
+      message(sprintf(tr_("OxCal binary found at %s."), path_exe))
     }
-  }
+    Sys.chmod(path_exe, mode = "777")
+    Sys.setenv(OXCAL_PATH = path_exe)
+  } else {
+    if (isTRUE(verbose)) {
+      message(sprintf(tr_("Could not find OxCal binary at %s."), path_exe))
+    }
 
-  ## Try to install?
-  download <- isTRUE(install)
-  if (isTRUE(install) && isTRUE(ask)) {
-    download <- utils::askYesNo(
-      msg = paste0(c("OxCal doesn't seem to be installed.",
-                     "Do you want to download it?"), collapse = "\n"),
-      default = FALSE,
-      prompts = gettext(c("Yes", "No", "Cancel"))
-    )
-  }
-  if (isTRUE(download)) {
+    ## Try to install?
+    download <- isTRUE(install)
+    if (isTRUE(install) && isTRUE(ask)) {
+      download <- utils::askYesNo(
+        msg = paste(tr_("OxCal doesn't seem to be installed."),
+                    tr_("Do you want to download it?"), sep = "\n"),
+        default = FALSE
+      )
+    }
+    if (isFALSE(download)) {
+      stop(tr_("OxCal was not installed."), call. = FALSE)
+    }
+
     ## Install
-    oxcal_location <- oxcal_install(
-      install_url = install_url,
-      install_location = install_location,
-      verbose = verbose
-    )
+    path <- oxcal_install(target = path, verbose = verbose, ...)
 
     ## Configure
-    path <- oxcal_configure(
-      command = oxcal_location,
-      os = os, ask = ask,
-      install_location = install_location,
-      install_url = install_url
-    )
-    return(invisible(path))
-  } else {
-    stop("OxCal was not installed.", call. = FALSE)
+    path_exe <- oxcal_configure(path = path, ask = ask, ...)
   }
+
+  return(invisible(path_exe))
+}
+
+#' Get OxCal Executable Path
+#'
+#' @param ... Currently not used.
+#' @details
+#'   Defaults to the R user directory.
+#' @return
+#'  A [`character`] string giving the path to OxCal executable.
+#' @example inst/examples/ex-oxcal-execute.R
+#' @seealso [tools::R_user_dir()]
+#' @author N. Frerebeau
+#' @export
+oxcal_path <- function(...) {
+  ## Get path
+  default <- file.path(tools::R_user_dir("ArchaeoCal", which = "data"), "OxCal")
+  Sys.getenv("OXCAL_PATH", unset = default)
 }

@@ -57,11 +57,11 @@ install.packages("ArchaeoData", repos = "https://archaeostat.r-universe.dev")
 ## Load package
 library(ArchaeoCal)
 
-## Download OxCal
-oxcal_configure(ask = FALSE)
+## Download and install OxCal
+oxcal_configure()
 ```
 
-```{r excute, eval=FALSE}
+```{r execute, eval=FALSE}
 ## Construct the path to the OxCal script
 path <- file.path("oxcal", "ksarakil", "ksarakil.oxcal")
 file <- system.file(path, package = "ArchaeoData")
@@ -78,6 +78,7 @@ out <- oxcal_execute(scr, file = "path/to/my/results")
 
 ## Parse OxCal output
 res <- oxcal_parse(out)
+as.data.frame(res)
 ```
 
 ## References

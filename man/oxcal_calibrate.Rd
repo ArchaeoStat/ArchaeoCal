@@ -40,13 +40,8 @@ as.data.frame(cal)
 }
 }
 \seealso{
-Other OxCal tools: 
-\code{\link{oxcal_configure}()},
-\code{\link{oxcal_execute}()},
-\code{\link{oxcal_install}()},
-\code{\link{oxcal_parse}()}
+\code{\link[=oxcal_execute]{oxcal_execute()}}
 }
 \author{
 N. Frerebeau
 }
-\concept{OxCal tools}

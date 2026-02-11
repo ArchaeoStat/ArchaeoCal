@@ -10,12 +10,25 @@ What the package does (one paragraph).
 }
 \details{
 \tabular{ll}{
-\strong{Package:} \tab ArchaeoCal \cr
-\strong{Type:} \tab Package \cr
 \strong{Version:} \tab 0.0.0 \cr
 \strong{License:} \tab GPL-3 \cr
 }
+
+Archéosciences Bordeaux (UMR 6034)\cr
+Maison de l'Archéologie\cr
+Université Bordeaux Montaigne\cr
+F-33607 Pessac cedex\cr
+France
 }
+\section{Package options}{
+
+\pkg{ArchaeoCal} uses the following \code{\link[=options]{options()}} to configure behaviour:
+\itemize{
+\item \code{ArchaeoCal.verbose}: a \code{\link{logical}} scalar. Should \R report extra
+information on progress? Defaults to \code{\link[=interactive]{interactive()}}.
+}
+}
+
 \seealso{
 Useful links:
 \itemize{
@@ -25,21 +38,7 @@ Useful links:
 
 }
 \author{
-\strong{Full list of authors and contributors} (alphabetic order)
+\strong{Maintainer}: Nicolas Frerebeau \email{nicolas.frerebeau@u-bordeaux-montaigne.fr} (\href{https://orcid.org/0000-0001-5759-4944}{ORCID})
 
-\tabular{ll}{
-Nicolas Frerebeau \tab \emph{Université Bordeaux Montaigne, France} \cr
-}
-
-\strong{Package maintainer}
-
-Nicolas Frerebeau\cr
-\email{nicolas.frerebeau@u-bordeaux-montaigne.fr}
-
-Archéosciences Bordeaux (UMR 6034)\cr
-Maison de l'Archéologie\cr
-Université Bordeaux Montaigne\cr
-33607 Pessac cedex\cr
-France
 }
 \keyword{internal}

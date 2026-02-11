@@ -54,8 +54,8 @@ install.packages("ArchaeoData", repos = "https://archaeostat.r-universe.dev")
 ## Load package
 library(ArchaeoCal)
 
-## Download OxCal
-oxcal_configure(ask = FALSE)
+## Download and install OxCal
+oxcal_configure()
 ```
 
 ``` r
@@ -75,6 +75,7 @@ out <- oxcal_execute(scr, file = "path/to/my/results")
 
 ## Parse OxCal output
 res <- oxcal_parse(out)
+as.data.frame(res)
 ```
 
 ## References

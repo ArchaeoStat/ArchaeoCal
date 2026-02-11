@@ -26,6 +26,8 @@ knitr::opts_chunk$set(
 
 ## Overview
 
+An R Interface to [OxCal](https://c14.arch.ox.ac.uk/oxcal.html) [@bronkramsey2009].
+
 ## Installation
 
 You can install the latest version of **ArchaeoCal** from [our repository](https://ArchaeoStat.r-universe.dev) with:
@@ -46,7 +48,7 @@ remotes::install_github("ArchaeoStat/ArchaeoCal")
 
 ## Usage
 
-This example uses data available through the [**ArchaeoData**](https://github.com/ArchaeoStat/ArchaeoData) package which is available in a [separate repository](https://archaeostat.r-universe.dev). **ArchaeoData** provides OxCal [@bronkramsey2009] input models.
+This example uses data available through the [**ArchaeoData**](https://github.com/ArchaeoStat/ArchaeoData) package which is available in a [separate repository](https://archaeostat.r-universe.dev). **ArchaeoData** provides OxCal input models.
 
 ```{r ArchaeoData, eval=FALSE}
 ## Install the latest version

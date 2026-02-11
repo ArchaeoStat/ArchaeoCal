@@ -18,6 +18,9 @@ public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostat
 
 ## Overview
 
+An R Interface to [OxCal](https://c14.arch.ox.ac.uk/oxcal.html) (Bronk
+Ramsey 2009).
+
 ## Installation
 
 You can install the latest version of **ArchaeoCal** from [our
@@ -43,7 +46,7 @@ This example uses data available through the
 [**ArchaeoData**](https://github.com/ArchaeoStat/ArchaeoData) package
 which is available in a [separate
 repository](https://archaeostat.r-universe.dev). **ArchaeoData**
-provides OxCal (Bronk Ramsey 2009) input models.
+provides OxCal input models.
 
 ``` r
 ## Install the latest version
